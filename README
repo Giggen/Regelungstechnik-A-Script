@@ -1,2 +1,6 @@
-Script fuer die Vorlesung Regelungstechnik A in Latex
+Skript fuer die Vorlesung Regelungstechnik A an der Friedrich-Alexander-Universitaet Erlangen-Nuernberg
+=======================================================================================================
+
+- getestet mit TexLive (Windows/Linux) und pdflatex
+- Kodiert in ISO8859-1
 

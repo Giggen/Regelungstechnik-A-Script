@@ -2,26 +2,69 @@ Die Regelungstechnik (RT) beschäftigt sich mit der selbsttätigen gezielten Beein
 Verhaltens von dynamischen Systemen. 
 
 \begin{center}
-\begin{tikzpicture}[auto, node distance=2cm]
-    \node [system, name=system] (system) {};
-    \node [input, left of=system] (input) {};
-    \node [output, right of=system] (output) {};
-    \node [disturb, above of=system] (disturb) {};
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+	\node [system] 		(system) 						{System};
+	\node 			(in) 	[left of=system,  node distance=4cm, coordinate] {system};
+	\node [coordinate] 	(out) 	[right of=system, node distance=4cm]		{};
 
-    \draw [draw,->] (input) -- node {} (system);
-    \draw [draw,->] (disturb) -- node {} (system);
-    \draw [draw,->] (system) -- node {} (output);
+	\path[->,thick] (in) edge node {Eingänge} (system);
+	\draw[->,thick] (system) edge node {Ausgänge} (out);
 \end{tikzpicture}
+
 \end{center}
 
 
 Die Eingänge werden in der RT aufgeteilt in von außen vorgebbare \underline{Eingangsgrößen} und in durch die Umgebung festgelegte, störend wirkende \underline{Störgrößen}. Von den Ausgängen werden nur diejenigen betrachtet, deren Verhalten unmittelbar interessiert. \underline{Ausgangsgrößen}.
 
+\begin{center}
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+	\node [system, pin={[arrowthick]above:Störgrößen}] 	(system) 						{dynamisches System};
+	\node 							(in) 	[left of=system,  node distance=6cm, coordinate]{system};
+	\node [coordinate] 					(out) 	[right of=system, node distance=6cm]		{};
+
+	\path[->,thick] (in) edge node {Eingangsgrößen} (system);
+	\draw[->,thick] (system) edge node {Ausgangsgrößen} (out);
+\end{tikzpicture}
+\end{center}
+
 \underline{Gezielte Beeinflussung} heißt: Durch Vorgabe der Eingangsgrößenverläufe soll erreicht werden, dass die Ausgangsgrößen trotz Störeinwirkung ein gewünschtes \underline{Sollverhalten} aufweisen.
 
 \subsubsection*{Beispiel 1 (Raumtemperatur)}
+\begin{center}
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+	\node [system, pin={[arrowthick]above:Außentemperatur, Sonne, Personen im Raum}]	
+								(system) 						{Raum mit Heizkörper und Ventil};
+	\node 							(in) 	[left of=system,  node distance=6cm, coordinate]{system};
+	\node [coordinate] 					(out) 	[right of=system, node distance=6cm]		{};
+
+	\path[->,thick] (in) edge node {Heizkörpereinstellung} (system);
+	\draw[->,thick] (system) edge node {Raumtemperatur} (out);
+\end{tikzpicture}
+\end{center}
+
 \subsubsection*{Beispiel 2 (Personenaufzug)}
+\begin{center}
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+	\node [system, pin={[arrowthick]above:Personen}] 	(system) 						{Aufzug mit el. Antrieb};
+	\node 							(in) 	[left of=system,  node distance=6cm, coordinate]{system};
+	\node [coordinate] 					(out) 	[right of=system, node distance=6cm]		{};
+
+	\path[->,thick] (in) edge node {Strom} (system);
+	\draw[->,thick] (system) edge node {Geschwindigkeit} (out);
+\end{tikzpicture}
+\end{center}
+
 \subsubsection*{Beispiel 3 (Auto fahren)}
+\begin{center}
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+	\node [system, pin={[arrowthick]above:Witterung, Fahrbahn, Gewicht}] 	(system) 				{Fahrzeug};
+	\node 							(in) 	[left of=system,  node distance=6cm, coordinate]{system};
+	\node [coordinate] 					(out) 	[right of=system, node distance=6cm]		{};
+
+	\path[->,thick] (in) edge node {Lenkradwinkel, Bremse, Gas} (system);
+	\draw[->,thick] (system) edge node {Richtung, Geschwindigkeit} (out);
+\end{tikzpicture}
+\end{center}
 
 \section*{Allgemeine Aufgabenstellung der RT}
 Entwurf und Bereitstellung einer Einrichtung, die - hinzugefügt zur Strecke - die Eingangsgrößen automatisch im gewünschten Sinne generiert. \underline{Selbsttätige gezielte Beeinflussung}.
