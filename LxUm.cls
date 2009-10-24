@@ -5,9 +5,8 @@
 \ProvidesClass{LxUm}[2002/10/09 Florian Schuh]
 \LoadClass[a4paper,%
            12pt,%
-           oneside,%
+           twoside,%
            openany,%
-           tocindent,%
            abstractoff,%
            titlepage,%
            headsepline,%
@@ -48,7 +47,6 @@
 \usepackage{marvosym}	        % Euro-Symbol
 \usepackage{abstract}         % Abstract
 \usepackage{graphicx}         % um Graphiken einzubinden
-%\usepackage{bibgerm}          % Deutsches Literaturverzeichnis
 \usepackage[square,comma,numbers,sort,sort&compress]{natbib}
 \usepackage{array}            % fuer aufwändigere Tabellen
 \usepackage[usenames,dvipsnames]{color}           % Farbiger/grauer Text
@@ -56,22 +54,23 @@
 \usepackage{longtable}        % seitenübergreifende Tabellen
 \usepackage{tabularx}         % automatische Spaltenbreite
 \usepackage{verbatim}         % Quelltexte einbinden
+\usepackage{fancyhdr}
 \usepackage{wrapfig}          % Text neben schmale Abb. setzen, manuell anpassen
-\usepackage{tikz}
-  \usetikzlibrary{plotmarks}
-  \usetikzlibrary{arrows,automata}
-  \usetikzlibrary{positioning}
-\usepackage{pgf}
-\usepackage{pgfplots}
-  \pgfkeys{/pgf/number format/use comma}
-  \pgfplotsset{
-    every axis x label/.append style={font=\footnotesize\sffamily},
-    every axis y label/.append style={font=\footnotesize\sffamily},
-  		every tick label/.append style={font=\footnotesize\sffamily},
-    every xlabel/.append style={font=\small\sffamily},
-    every ylabel/.append style={font=\small\sffamily},
-    every legend/.append style={font=\footnotesize\sffamily},
-  }
+% \usepackage{tikz}
+%   \usetikzlibrary{plotmarks}
+%   \usetikzlibrary{arrows,automata}
+%   \usetikzlibrary{positioning}
+% \usepackage{pgf}
+% \usepackage{pgfplots}
+%   \pgfkeys{/pgf/number format/use comma}
+%   \pgfplotsset{
+%     every axis x label/.append style={font=\footnotesize\sffamily},
+%     every axis y label/.append style={font=\footnotesize\sffamily},
+%   		every tick label/.append style={font=\footnotesize\sffamily},
+%     every xlabel/.append style={font=\small\sffamily},
+%     every ylabel/.append style={font=\small\sffamily},
+%     every legend/.append style={font=\footnotesize\sffamily},
+%   }
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage[raggedright,sf]{subfigure}
@@ -131,11 +130,6 @@
 \fi
 
 % ----------------------------------------------------------------
-% Abstract-Name
-% ----------------------------------------------------------------
-\renewcommand\abstractname{Zusammenfassung}
-
-% ----------------------------------------------------------------
 % Stil des Literaturverzeichnis
 % ----------------------------------------------------------------
 \bibliographystyle{alphadin}
@@ -164,6 +158,16 @@
   }}{\end{list}}
 
 % ----------------------------------------------------------------
+% Fusszeile
+% ----------------------------------------------------------------
+\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gewähr}
+\fancyfoot[RO,LE] {\thepage}
+\fancypagestyle{plain}{%
+	\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gewähr}
+	\fancyfoot[RO,LE] {\thepage}
+}
+
+% ----------------------------------------------------------------
 % Trennhinweise fuer Woerter
 % ----------------------------------------------------------------
 \hyphenation{
@@ -173,8 +177,10 @@
 % MAKROS
 % ----------------------------------------------------------------
 \newcommand{\EMPTYPAGE}{\newpage\thispagestyle{empty}\null\newpage}
+\newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
+\newcommand{\vc}[1]{\mathbf{\bm{#1}}} % Vector command
 
 % ----------------------------------------------------------------
 % Graphics
 % ----------------------------------------------------------------
-\input{graphics.tex}
+% \input{graphics.tex}

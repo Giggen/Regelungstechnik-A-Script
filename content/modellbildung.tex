@@ -6,15 +6,9 @@ Ein Modell ist eine aufgabenspezifische Vereinfachung der Realität. In der RT be
 \subsection{Beispiel: Permanten erregter Gleichstrommotor}
 \begin{itemize}
 	\item Geräteschema: (siehe Beiblatt 4)
-	\item Systemdarstellung: 
-	\begin{center}
-	\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
-		\node [system, pin={[arrowthick]above:$U_L$}] 	(system) 						{Motor};
-		\node 							(in) 	[left of=system,  node distance=2cm, coordinate]{system};
-		\node [coordinate] 					(out) 	[right of=system, node distance=2cm]		{};
-	
-		\path[->,thick] (in) edge node {$U_A$} (system);
-		\draw[->,thick] (system) edge node {$\omega$} (out);
-	\end{tikzpicture}
-	\end{center}
+	\item Systemdarstellung:
 \end{itemize}
+
+\begin{center}
+	\includegraphics[width=200px]{graphics/gleichstrommotor.pdf}
+\end{center}
