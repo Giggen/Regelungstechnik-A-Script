@@ -45,13 +45,12 @@
 \usepackage[T1]{fontenc}      % Eingabe
 \usepackage[ansinew]{inputenc}% Eingabe
 \usepackage{marvosym}	        % Euro-Symbol
-\usepackage{abstract}         % Abstract
 \usepackage{graphicx}         % um Graphiken einzubinden
 \usepackage[square,comma,numbers,sort,sort&compress]{natbib}
-\usepackage{array}            % fuer aufwändigere Tabellen
+\usepackage{array}            % fuer aufw?ndigere Tabellen
 \usepackage[usenames,dvipsnames]{color}           % Farbiger/grauer Text
 \usepackage{colortbl}         % farbige Tabellen (v. D. Carlisle)
-\usepackage{longtable}        % seitenübergreifende Tabellen
+\usepackage{longtable}        % seiten?bergreifende Tabellen
 \usepackage{tabularx}         % automatische Spaltenbreite
 \usepackage{verbatim}         % Quelltexte einbinden
 \usepackage{fancyhdr}
@@ -71,16 +70,12 @@
 %     every ylabel/.append style={font=\small\sffamily},
 %     every legend/.append style={font=\footnotesize\sffamily},
 %   }
-\usepackage{algorithmic}
-\usepackage{algorithm}
 \usepackage[raggedright,sf]{subfigure}
-\usepackage{fancybox}         % für schattierte,ovale Boxen etc.
+\usepackage{fancybox}         % f?r schattierte,ovale Boxen etc.
 \usepackage[T1]{url}          % much like \verb allow line breaks for paths and URLs
-\usepackage{setspace}         % Zeilenabstände
+\usepackage{setspace}         % Zeilenabst?nde
 \usepackage{amsmath}          % mathematische Gleichungen
-\usepackage{listings}         % Quellcode darstellen
-\usepackage{xspace} 										% Fuer typographisch richtiges z.B.
-\usepackage{color}   % für farbige Hyperlinks benötigt
+\usepackage{xspace} 	      % Fuer typographisch richtiges z.B.
 \usepackage[pdftex,
 	raiselinks=false,%
 	bookmarks=true,%
@@ -103,7 +98,7 @@
 	pdfcreator={\MYCREATOR},%
 	pdfproducer={\MYPRODUCER},%
 	pdfkeywords={\MYKEYWORDS},%
-	hyperfootnotes=false]{hyperref} % erzeuge Hyperlinks z.B. für pdflatex
+	hyperfootnotes=false]{hyperref} % erzeuge Hyperlinks z.B. f?r pdflatex
 \pdfcompresslevel=9
 
 % ----------------------------------------------------------------
@@ -160,10 +155,10 @@
 % ----------------------------------------------------------------
 % Fusszeile
 % ----------------------------------------------------------------
-\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gewähr}
+\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gew?hr}
 \fancyfoot[RO,LE] {\thepage}
 \fancypagestyle{plain}{%
-	\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gewähr}
+	\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gew?hr}
 	\fancyfoot[RO,LE] {\thepage}
 }
 
@@ -174,13 +169,13 @@
 }
 
 % ----------------------------------------------------------------
+% Graphics
+% ----------------------------------------------------------------
+% \input{graphics.tex}
+
+% ----------------------------------------------------------------
 % MAKROS
 % ----------------------------------------------------------------
 \newcommand{\EMPTYPAGE}{\newpage\thispagestyle{empty}\null\newpage}
 \newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
 \newcommand{\vc}[1]{\mathbf{\bm{#1}}} % Vector command
-
-% ----------------------------------------------------------------
-% Graphics
-% ----------------------------------------------------------------
-% \input{graphics.tex}
