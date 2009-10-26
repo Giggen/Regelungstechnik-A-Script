@@ -9,9 +9,6 @@ Ein Modell ist eine aufgabenspezifische Vereinfachung der Realität. In der RT be
 \begin{itemize}
 	\item Geräteschema: (siehe Beiblatt 4)
 	\item Systemdarstellung:
-<<<<<<< HEAD:content/modellbildung.tex
-<<<<<<< HEAD:content/modellbildung.tex
-<<<<<<< HEAD:content/modellbildung.tex
 \end{itemize}
 
 \begin{center}
@@ -37,31 +34,18 @@ Ein Modell ist eine aufgabenspezifische Vereinfachung der Realität. In der RT be
  u_{ind}(t) = c \phi_F \omega(t)
 \end{equation}
 
-\subsubsection*{rotierender Anker + Welle:}
+\subsubsection*{Rotierender Anker + Welle:}
 \[J\dot{\omega} = M_\Sigma
 \longrightarrow \dot{\omega} = \frac{1}{J} M_\Sigma(t) \]
 \begin{equation}
  \xrightarrow {\text{Integration von 0 bis t}}  \omega(t) = \omega(0) + \frac{1}{J} \int_0^t M_z(\tau), d \tau
 \end{equation}
 
-
-
-
-
-
-
-
-
-
-=======
-=======
->>>>>>> 5146e1967d6928da3c6b0ee572d465bc5b52ef94:content/modellbildung.tex
-=======
->>>>>>> 5146e1967d6928da3c6b0ee572d465bc5b52ef94:content/modellbildung.tex
 		\begin{center}
 			\includegraphics[width=200px]{graphics/gleichstrommotor.pdf}
 		\end{center}
-	\item Ermittlung der beschreibenden Gleichungen
+\begin{itemize}
+		\item Ermittlung der beschreibenden Gleichungen:
 		\subitem Ankerstromkreis
 		\begin{align}
 		u_L=L\frac{di_A}{dt} \rightarrow \frac{di_A(t)}{dt}=\frac{1}{L}u_L(t) \stackrel{\int_0^t}{\rightarrow}i_A(t)=i_A(0)+\frac{1}{L_A}\int_0^t u_L(\tau)d\tau \\
@@ -76,13 +60,63 @@ Ein Modell ist eine aufgabenspezifische Vereinfachung der Realität. In der RT be
 		M_A(t) = c \phi_F L_A(t)
 		\end{align}
 	\item Übersetzung der Gleichungen ins Strukturbild {TODO:BILD}
-<<<<<<< HEAD:content/modellbildung.tex
-<<<<<<< HEAD:content/modellbildung.tex
+	\begin{thms}
+		Strukturbild = Graphische Darstellung der Systemregeln (durch Blöcke und Wirkungslinien). Dadurch anschaulich und \underline{Wirkungsrichtungen} sofort ersichtlich.
+	\end{thms}
 \end{itemize}
->>>>>>> 5146e1967d6928da3c6b0ee572d465bc5b52ef94:content/modellbildung.tex
-=======
+
+\subsection{Die Bausteine des Strukturfeldes}
+\begin{itemize}
+	\item \underline{gerichtete Linien} geben die \underline{Systemgrößen im Zeitbereich} und ihre Wirkrichtungen wieder
+	\item \underline{Blöcke, Rechtecke und Kreise} beschreiben die Funktionsbeziehung zwischen den Systemgrößen und ordnen jedem Zeitverlauf der Eingangsgrößen
+eindeutig einem Zeitverlauf der Ausgangsgröße zu. \\
+	$ \rightarrow {\text{Jeder Block wirkt als \underline{Übertragungsglied} (ÜG)}} $
+
 \end{itemize}
->>>>>>> 5146e1967d6928da3c6b0ee572d465bc5b52ef94:content/modellbildung.tex
-=======
+
+\subsubsection{Darstellungsmöglichkeiten}
+\begin{itemize}
+ \item mittels Zuordnungsvorschrift \\
+	bzw. Systemoperator $\boldsymbol{\mathcal{S}}$ \\
+	vgl. obiges Beispiel \\
+	TODO: Blockdiagram
+	$ y(t) = \mathcal{S}\left \{ u(t)  \right \}$
+ \item bei LZI-ÜG weiterhin
+	\subitem mittels Übertragunsfunktion ÜG \\
+		TODO: Blockdiagram \\
+		$ y(t) \multimapdotbothA Y(s) = G(s)U(s)$
+	\subitem mittels Sprungantwort $y_\sigma(t)$ \\
+		(= $ y(t) $ für	$ u(t) $ = Einheitsprung $ \sigma(t) $ \\
+		TODO: Blockdiagram \\
+		$ y(t) = g(t)*u(t)  = {\dot{y}_\sigma(t)} * u(t) $\\
+		(da $g(t) = {\dot{y}_\sigma(t)} $ gilt)
+\item Zusammenstellung elementarer ÜG \\
+	(nicht in noch einfachere Bestandteile zerlegbar):\\(siehe Beiblatt 5)
+	
 \end{itemize}
->>>>>>> 5146e1967d6928da3c6b0ee572d465bc5b52ef94:content/modellbildung.tex
+
+\subsubsection{\underline{Hinweise zum Totzeitglied:}}
+\begin{itemize}
+ \item typisch für Transportprozesse
+ \item ÜF rational approximierbar z.B. gemäß
+      \[ e^{-T_t s} \approx \frac{1- 0,5 T_t s}{1 + 0,5 T_t s} \]
+\end{itemize}
+
+\subsubsection{Häufig auftretende Kombinationen elementarer ÜG werden zu \underline{zusammengesetzten} ÜG zusammengefasst}
+$\rightarrow$ siehe Beiblatt 6
+
+\subsubsection{Aufbau des $PT_1$ - Gliedes aus elementaren ÜG:}
+    \[ T\dot{y} + y = Ku \\
+    \rightarrow \dot{y} = \frac{1}{T} (K u - y) = \frac{K}{T} (u - \frac{1}{K} y) \\
+     \]
+    \[y(t) = y(0) + \frac{K}{T} \int_0^t v(\tau) d\tau   \text{ mit } v(t) = u(t) - \frac{1}{K} y(t)
+    \]
+    \\
+    TODO: Blockschaltbild
+
+\subsubsection{Normierte $PT_2$-Sprungantworten für $D\le 1$}
+$\rightarrow$ siehe Beiblatt 7
+
+
+
+
