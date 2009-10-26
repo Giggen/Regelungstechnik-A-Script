@@ -14,7 +14,6 @@
            final]{scrreprt}
 \ProcessOptions
 
-
 % ----------------------------------------------------------------
 % Dokumentendaten
 % ----------------------------------------------------------------
@@ -50,11 +49,8 @@
 \usepackage{array}            % fuer aufw?ndigere Tabellen
 \usepackage[usenames,dvipsnames]{color}           % Farbiger/grauer Text
 \usepackage{colortbl}         % farbige Tabellen (v. D. Carlisle)
-\usepackage{longtable}        % seiten?bergreifende Tabellen
-\usepackage{tabularx}         % automatische Spaltenbreite
-\usepackage{verbatim}         % Quelltexte einbinden
 \usepackage{fancyhdr}
-\usepackage{wrapfig}          % Text neben schmale Abb. setzen, manuell anpassen
+\usepackage{framed} % Boxen
 % \usepackage{tikz}
 %   \usetikzlibrary{plotmarks}
 %   \usetikzlibrary{arrows,automata}
@@ -71,7 +67,6 @@
 %     every legend/.append style={font=\footnotesize\sffamily},
 %   }
 \usepackage[raggedright,sf]{subfigure}
-\usepackage{fancybox}         % f?r schattierte,ovale Boxen etc.
 \usepackage[T1]{url}          % much like \verb allow line breaks for paths and URLs
 \usepackage{setspace}         % Zeilenabst?nde
 \usepackage{amsmath}          % mathematische Gleichungen
@@ -156,8 +151,10 @@
 % Fusszeile
 % ----------------------------------------------------------------
 \fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gewähr}
+\fancyhead{}
 \fancyfoot[RO,LE] {\thepage}
 \fancypagestyle{plain}{%
+	\fancyhead{}
 	\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gewähr}
 	\fancyfoot[RO,LE] {\thepage}
 }
@@ -174,8 +171,62 @@
 % \input{graphics.tex}
 
 % ----------------------------------------------------------------
+% Farben
+% ----------------------------------------------------------------
+\definecolor{blau}{rgb}{0.20,0.40,0.65}
+\definecolor{orange}{rgb}{0.95,0.55,0.15}
+\definecolor{gruen}{rgb}{0.30,0.65,0.15}
+\definecolor{rot}{rgb}{0.95,0.20,0.20}
+
+% ----------------------------------------------------------------
 % MAKROS
 % ----------------------------------------------------------------
 \newcommand{\EMPTYPAGE}{\newpage\thispagestyle{empty}\null\newpage}
 \newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
 \newcommand{\vc}[1]{\mathbf{\bm{#1}}} % Vector command
+\newcommand{\bb}[1]{\color{blau}{\#1}} % Beiblatt
+
+% ----------------------------------------------------------------
+% Umgebungen
+% ----------------------------------------------------------------
+\usepackage{shadethm}
+\newshadetheorem{thms}{Satz}[chapter]
+\newshadetheorem{definitions}{Definition}[chapter]
+\newshadetheorem{cors}{Korollar}[chapter]
+\newshadetheorem{zuss}{Zusammenfassung}[chapter]
+\newshadetheorem{axioms}{Axiom}[chapter]
+
+\newenvironment{thm}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  \setlength{\shadeboxrule}{1.5pt}%
+  \begin{thms}[#1]\hspace*{1mm}%
+}{\end{thms}}
+
+\newenvironment{definition}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  \setlength{\shadeboxrule}{1.5pt}%
+  \begin{definitions}[#1]\hspace*{1mm}%
+}{\end{definitions}}
+
+\newenvironment{corr}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  \setlength{\shadeboxrule}{1.5pt}%
+  \begin{cors}[#1]\hspace*{1mm}%
+}{\end{cors}}
+
+\newenvironment{summary}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  \setlength{\shadeboxrule}{1.5pt}%
+  \begin{zuss}[#1]\hspace*{1mm}%
+}{\end{zuss}}
+
+\newenvironment{axiom}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  \setlength{\shadeboxrule}{1.5pt}%
+  \begin{axioms}[#1]\hspace*{1mm}%
+}{\end{axioms}}
