@@ -1,4 +1,6 @@
-Modellbildung der Strecke durch mathematische Beschreibungen der Wirkungszusammenhänge zwischen den Systemgrößen, die für die Aufgabenstellung relevant sind.
+\begin{thms}
+	Modellbildung der Strecke durch mathematische Beschreibungen der Wirkungszusammenhänge zwischen den Systemgrößen, die für die Aufgabenstellung relevant sind.
+\end{thms}
 
 Ein Modell ist eine aufgabenspezifische Vereinfachung der Realität. In der RT bewährte Modellierungsform:
 
@@ -7,19 +9,22 @@ Ein Modell ist eine aufgabenspezifische Vereinfachung der Realität. In der RT be
 \begin{itemize}
 	\item Geräteschema: (siehe Beiblatt 4)
 	\item Systemdarstellung:
+		\begin{center}
+			\includegraphics[width=200px]{graphics/gleichstrommotor.pdf}
+		\end{center}
+	\item Ermittlung der beschreibenden Gleichungen
+		\subitem Ankerstromkreis
+		\begin{align}
+		u_L=L\frac{di_A}{dt} \rightarrow \frac{di_A(t)}{dt}=\frac{1}{L}u_L(t) \stackrel{\int_0^t}{\rightarrow}i_A(t)=i_A(0)+\frac{1}{L_A}\int_0^t u_L(\tau)d\tau \\
+		u_A=u_R+u_L+u_{ind} \rightarrow u_L(t)=u_A(t)-u_R(t)-u_{ind}(t) \\
+		u_R(t)=R_Ai_A(t) \\
+		U_{ind}=c\phi\omega(t)
+		\end{align}
+		\subitem Rotierender Anker und Welle
+		\begin{align}
+		J\dot{\omega}=M_{\sum} \rightarrow \dot{\omega}(t)=\frac{1}{J}M_{\sum}(t)\stackrel{\int_0^t}{\rightarrow}\omega(t)=\omega(0)+\frac{1}{J}\int_0^t M_{\sum}(\tau)d\tau \\
+		M_{\sum}(t)=M_A(t)-M_L(t) \\
+		M_A(t) = c \phi_F L_A(t)
+		\end{align}
+	\item Übersetzung der Gleichungen ins Strukturbild {TODO:BILD}
 \end{itemize}
-
-\begin{center}
-	\includegraphics[width=200px]{graphics/gleichstrommotor.pdf}
-\end{center}
-
-\subsubsection{Ermittlung der beschreibenden Gleichungen}
-
-\begin{equation}
-  u_l(t) = L \frac{di_a} {dt} \longrightarrow \frac{d i_a(t)}{d t} = \frac{1}{L_A} u_l(t) \longrightarrow
-\end{equation}
-\begin{equation}
-  i_a(t) = i_a(0) + \frac{1}{L_A} \int_0^t u_l{\tau}, d\tau
-\end{equation}
-
-
