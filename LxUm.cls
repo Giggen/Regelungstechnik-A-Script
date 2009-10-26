@@ -155,10 +155,10 @@
 % ----------------------------------------------------------------
 % Fusszeile
 % ----------------------------------------------------------------
-\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gew?hr}
+\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gewähr}
 \fancyfoot[RO,LE] {\thepage}
 \fancypagestyle{plain}{%
-	\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gew?hr}
+	\fancyfoot[C]{Private Mitschrift WS09/10 - ohne Gewähr}
 	\fancyfoot[RO,LE] {\thepage}
 }
 
