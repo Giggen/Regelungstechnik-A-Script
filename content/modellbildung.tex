@@ -3,7 +3,7 @@ Modellbildung der Strecke durch mathematische Beschreibungen der Wirkungszusamme
 Ein Modell ist eine aufgabenspezifische Vereinfachung der Realität. In der RT bewährte Modellierungsform:
 
 \section{Darstellung der Strecke als Strukturbild (Blockschaltbild)}
-\subsection{Beispiel: Permanten erregter Gleichstrommotor}
+\subsection{Beispiel: Permant erregter Gleichstrommotor}
 \begin{itemize}
 	\item Geräteschema: (siehe Beiblatt 4)
 	\item Systemdarstellung:
@@ -13,13 +13,38 @@ Ein Modell ist eine aufgabenspezifische Vereinfachung der Realität. In der RT be
 	\includegraphics[width=200px]{graphics/gleichstrommotor.pdf}
 \end{center}
 
-\subsubsection{Ermittlung der beschreibenden Gleichungen}
+\subsubsection{Ermittlung der beschreibenden Gleichungen:}
+
+  \[u_l(t) = L \frac{di_A(t)} {dt} \longrightarrow \frac{d i_A(t)}{dt} = \frac{1}{L_A} u_l(t) \]
+\begin{equation}
+   \xrightarrow {\text{Integration von 0 bis t}} i_A(t) = i_A(0) + \frac{1}{L_A} \int_0^t u_l(\tau), d \tau 
+\end{equation}
+ \[u_A(t) = u_R + u_L + u_{ind} \]
+\begin{equation}
+\longrightarrow u_L(t) = u_A(t) - u_R(t) - u_{ind}(t)
+\end{equation}
 
 \begin{equation}
-  u_l(t) = L \frac{di_a} {dt} \longrightarrow \frac{d i_a(t)}{d t} = \frac{1}{L_A} u_l(t) \longrightarrow
+ u_R(t) = R_A i_A(t)
 \end{equation}
+
 \begin{equation}
-  i_a(t) = i_a(0) + \frac{1}{L_A} \int_0^t u_l{\tau}, d\tau
+ u_{ind}(t) = c \phi_F \omega(t)
 \end{equation}
+
+\subsubsection*{rotierender Anker + Welle:}
+\[J\dot{\omega} = M_\Sigma
+\longrightarrow \dot{\omega} = \frac{1}{J} M_\Sigma(t) \]
+\begin{equation}
+ \xrightarrow {\text{Integration von 0 bis t}}  \omega(t) = \omega(0) + \frac{1}{J} \int_0^t M_z(\tau), d \tau
+\end{equation}
+
+
+
+
+
+
+
+
 
 
