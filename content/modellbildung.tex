@@ -76,46 +76,51 @@ eindeutig einem Zeitverlauf der Ausgangsgröße zu. \\
 
 \subsubsection{Darstellungsmöglichkeiten}
 \begin{itemize}
- \item mittels Zuordnungsvorschrift \\
-	bzw. Systemoperator $\boldsymbol{\mathcal{S}}$ \\
-	vgl. obiges Beispiel \\
-	TODO: Blockdiagram
-	$ y(t) = \mathcal{S}\left \{ u(t)  \right \}$
+ \item mittels Zuordnungsvorschrift bzw. Systemoperator $\boldsymbol{\mathcal{S}}$ (vgl. obiges Beispiel)
+	\begin{equation*}
+		y(t) = \mathcal{S}\left \{ u(t)  \right \}
+	\end{equation*}
+	\TODO{Blockdiagramm}
+
  \item bei LZI-ÜG weiterhin
-	\subitem mittels Übertragunsfunktion ÜG \\
-		TODO: Blockdiagram \\
-		$ y(t) \multimapdotbothA Y(s) = G(s)U(s)$
-	\subitem mittels Sprungantwort $y_\sigma(t)$ \\
-		(= $ y(t) $ für	$ u(t) $ = Einheitsprung $ \sigma(t) $ \\
-		TODO: Blockdiagram \\
-		$ y(t) = g(t)*u(t)  = {\dot{y}_\sigma(t)} * u(t) $\\
-		(da $g(t) = {\dot{y}_\sigma(t)} $ gilt)
-\item Zusammenstellung elementarer ÜG \\
-	(nicht in noch einfachere Bestandteile zerlegbar):\\(siehe Beiblatt 5)
-	
+	\subitem mittels Übertragunsfunktion ÜG 
+	\begin{equation*}
+		y(t) \multimapdotbothA Y(s) = G(s)U(s)
+	\end{equation*}
+	\TODO{Blockdiagramm}
+
+	\subitem mittels Sprungantwort $y_\sigma(t)$ (= $ y(t) $ für $ u(t) $ = Einheitsprung $ \sigma(t) $ )
+	\begin{align*}
+		y(t) = g(t)*u(t)  = \dot{y}_\sigma(t) * u(t) \\
+		\mbox{(da $ g(t) = \dot{y}_\sigma(t) $ gilt.)}
+	\end{align*}
+	\TODO{Blockdiagramm}
+
+ \item Zusammenstellung elementarer ÜG \\
+	(nicht in noch einfachere Bestandteile zerlegbar):\\
+	$\rightarrow$ siehe \bb{5}
 \end{itemize}
 
-\subsubsection{\underline{Hinweise zum Totzeitglied:}}
-\begin{itemize}
- \item typisch für Transportprozesse
- \item ÜF rational approximierbar z.B. gemäß
-      \[ e^{-T_t s} \approx \frac{1- 0,5 T_t s}{1 + 0,5 T_t s} \]
-\end{itemize}
+\begin{hinweis}[Totzeitglied]
+	\begin{itemize}
+		\item typisch für Transportprozesse
+		\item ÜF rational approximierbar z.B. gemäß
+		\[ e^{-T_t s} \approx \frac{1- 0,5 T_t s}{1 + 0,5 T_t s} \]
+	\end{itemize}
+\end{hinweis}
 
-\subsubsection{Häufig auftretende Kombinationen elementarer ÜG werden zu \underline{zusammengesetzten} ÜG zusammengefasst}
-$\rightarrow$ siehe Beiblatt 6
+Häufig auftretende Kombinationen elementarer ÜG werden zu \underline{zusammengesetzten} ÜG zusammengefasst. $\rightarrow$ siehe \bb{6}
 
-\subsubsection{Aufbau des $PT_1$ - Gliedes aus elementaren ÜG:}
-    \[ T\dot{y} + y = Ku \\
+\subsubsection{Aufbau des $PT_1$ - Gliedes aus elementaren ÜG}
+\begin{align}
+    T\dot{y} + y = Ku \\
     \rightarrow \dot{y} = \frac{1}{T} (K u - y) = \frac{K}{T} (u - \frac{1}{K} y) \\
-     \]
-    \[y(t) = y(0) + \frac{K}{T} \int_0^t v(\tau) d\tau   \text{ mit } v(t) = u(t) - \frac{1}{K} y(t)
-    \]
-    \\
-    TODO: Blockschaltbild
+    y(t) = y(0) + \frac{K}{T} \int_0^t v(\tau) d\tau   \text{ mit } v(t) = u(t) - \frac{1}{K} y(t)
+\end{align}
+\TODO{Blockschaltbild}
 
 \subsubsection{Normierte $PT_2$-Sprungantworten für $D\le 1$}
-$\rightarrow$ siehe Beiblatt 7
+$\rightarrow$ siehe \bb{7}
 
 
 

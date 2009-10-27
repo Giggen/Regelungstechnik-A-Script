@@ -185,7 +185,8 @@
 \newcommand{\EMPTYPAGE}{\newpage\thispagestyle{empty}\null\newpage}
 \newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
 \newcommand{\vc}[1]{\mathbf{\bm{#1}}} % Vector command
-\newcommand{\bb}[1]{\color{blau}{\#1}} % Beiblatt
+\newcommand{\bb}[1]{{\color{rot}{Beiblatt: #1}}} % Beiblatt
+\newcommand{\TODO}[1]{{\color{orange}{TODO: #1}}} % TODO
 
 % ----------------------------------------------------------------
 % Umgebungen
@@ -196,38 +197,46 @@
 \newshadetheorem{cors}{Korollar}[chapter]
 \newshadetheorem{zuss}{Zusammenfassung}[chapter]
 \newshadetheorem{axioms}{Axiom}[chapter]
+\newshadetheorem{hinweise}{Hinweis}[chapter]
 
 \newenvironment{thm}[1][]{%
   \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
   \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
-  \setlength{\shadeboxrule}{1.5pt}%
+%   \setlength{\shadeboxrule}{1.5pt}%
   \begin{thms}[#1]\hspace*{1mm}%
 }{\end{thms}}
 
 \newenvironment{definition}[1][]{%
   \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
   \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
-  \setlength{\shadeboxrule}{1.5pt}%
+%   \setlength{\shadeboxrule}{1.5pt}%
   \begin{definitions}[#1]\hspace*{1mm}%
 }{\end{definitions}}
 
 \newenvironment{corr}[1][]{%
   \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
   \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
-  \setlength{\shadeboxrule}{1.5pt}%
+%   \setlength{\shadeboxrule}{1.5pt}%
   \begin{cors}[#1]\hspace*{1mm}%
 }{\end{cors}}
 
 \newenvironment{summary}[1][]{%
   \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
   \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
-  \setlength{\shadeboxrule}{1.5pt}%
+%   \setlength{\shadeboxrule}{1.5pt}%
   \begin{zuss}[#1]\hspace*{1mm}%
 }{\end{zuss}}
 
 \newenvironment{axiom}[1][]{%
   \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
   \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
-  \setlength{\shadeboxrule}{1.5pt}%
+%   \setlength{\shadeboxrule}{1.5pt}%
   \begin{axioms}[#1]\hspace*{1mm}%
 }{\end{axioms}}
+
+\newenvironment{hinweis}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+%   \setlength{\shadeboxrule}{1.5pt}%
+  \begin{hinweise}#1\hspace*{1mm}%
+}{\end{hinweise}}
