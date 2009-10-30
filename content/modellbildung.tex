@@ -122,6 +122,78 @@ Häufig auftretende Kombinationen elementarer ÜG werden zu \underline{zusammenges
 \subsubsection{Normierte $PT_2$-Sprungantworten für $D\le 1$}
 $\rightarrow$ siehe \bb{7}
 
+\subsection{Weiteres Beispiel: Magnetlager als Fahrzeug Tragsystem}
+\begin{itemize}
+ \item Geräteschema siehe $\bb{8}$ \\
+	\TODO Blockdiagramm
+ \item Beschreibende Gleichungen und Strukturbild siehe $\bb{9}$ \\
+\end{itemize}
+
+\section{Modellvereinfachung durch Betriebspunkt-Linearisierung}
+\subsection{Betriebspunkt bzw. Arbeitspunkt eines Systems}
+\begin{itemize}
+ \item \underline{Betriebspunkt (BP)} = System-Ruhezustand, in dem die Ausgagsgröße y den stationären Sollwert $y_{s\infty}$ annimmt.
+ \item \underline{Ruhezustand} (Ruhelage, Gleichgewichtslage, stationärer Zustand) = Systemzustand, in dem \underline{alle} Systemgrößen konstant
+und damit ihre Zeitableitung gleich null sind. Zu seiner Bestimmung entweder die Systemgleichungen heranziehen und darin dei Ableitungen null 
+setzen oder im Strukturbild in der Übertragunsfunktion $s=0$ setzen, außer beim $\boldsymbol{I-Glied}$:\\
+ \item Dort muss die Eingangsgröße Null sein. Für die BP-Bestimmung dann noch $y \stackrel{!}{=} y_{s\infty}$ setzen.
+\end{itemize}
+\subsubsection{Beispiel Magnetlager}
+\begin{itemize}
+ \item Für $F_{zb} = 0$ soll $x_B = x_{s\infty} = \frac{d}{2}$ gelten. \\
+ \item Einzustellendes $i$? \\
+	\[
+	\left.\begin{matrix}
+	    v_B = 0 \\
+	    F_{\Sigma B} =  
+	\end{matrix}\right\}
+\xrightarrow[]{F_{zB} = 0} F_{mB} = mg \]
+\[F_{mB} = K_m \frac{i_B^2}{(d-x_B)^2} \xrightarrow[x_B = \frac{d}{2}] {F_{mB} = mg} i=\sqrt{\frac{mg}{K_m}} \cdot \frac{d}{2} \]
+
+\end{itemize}
+
+\subsection{Durchführung der Linearisierung}
+\begin{enumerate}
+ \item \underline{Übergang von den Absolutgrößen $u(t)$, $y(t)$ zu den BP-Abweichungen}
+	\[ \Delta u(t) = u(t) - u_B \\
+	 \Delta y(t) = y(t) - y_B
+	\]
+Ein lineares ÜG $y(t) = \mathcal{S} \left \{ u(t) \right \} $ geht dabei über in 
+\begin{align}
+	\Delta y(t) &= y(t) - y_B \\
+	&= \mathcal{S} \left \{ u(t)  \right \} - \mathcal{S} \left \{ u_B  \right \} \\
+	&= \mathcal{S} \left \{ u_B  \right \} +  \mathcal{S} \left \{ \Delta u(t) \right \} - \mathcal{S} \left \{ \Delta u_B \right \}
+\end{align}
+\[ \rightarrow \Delta y(t) =  \mathcal{S} \left \{ \Delta u(t) \right \}\]
+d.h. \underline{lineare ÜG bleiben unverändert} \\
+Für ein nicht lineares ÜG folgt: \\
+\begin{align}
+	\Delta y(t) & = \mathcal{S} \left \{ u_B(t) + \Delta u(t) \right \} - \mathcal{S} \left \{ u_B \right \} \\
+	& = \mathcal{\tilde S} \left \{ \Delta u(t) \right \} \not= \mathcal{\tilde S} \left \{ \Delta u(t) \right \}
+\end{align}
+
+d.h. \underline{Nichtlineare ÜG ändern dabei ihre Funktionalbezieung, bleiben aber i.A. nichtlinear} \\
+
+\subsubsection{Beispiel: KL-Glied $y=F(u)$}
+
+\TODO Graph
+
+\item \underline{Schritt:}\\
+Annahme kleiner Abweichungen und lineare Approximation der nichtlinearen Beziehungen durch Taylor-Reihenentwicklung mit Abbruch nach dem linearen Term \\
+z.B. KL-Glied
+\begin{align}
+  y(t)  = F(u(t)) \xrightarrow[]{u = u_B + \Delta u} \\
+  y(t)  = F(u_B + \Delta u(t)) \\
+  y(t)  = \underbrace{F(u_B)}_{y_B} + F'(u_B) \cdot \Delta u(t) + R(\Delta u(t)^2) \\
+\end{align}
+Linearisierung durch Weglassen des Restglieds
+
+$\rightarrow$ \underline{nichtlineare ÜG} gehen in P-Glieder mit der Verstärkung $F'(u_B)$ über.
+
+
+\end{enumerate}
+
+
 
 
 
