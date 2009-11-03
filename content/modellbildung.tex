@@ -189,9 +189,57 @@ z.B. KL-Glied
 Linearisierung durch Weglassen des Restglieds
 
 $\rightarrow$ \underline{nichtlineare ÜG} gehen in P-Glieder mit der Verstärkung $F'(u_B)$ über.
-
-
 \end{enumerate}
+
+\subsubsection{\underline{Beispiel Magnetlager}}
+\begin{itemize}
+ \item Linearisierung der Magnetkraft-Beziehung
+	\[ F_M = F_M(i,x) \xrightarrow[i=i_B+\Delta i]{x = x_B + \Delta x} F_M = F_M(i_B, x_B) +  
+	\left. \frac{\delta F_M}{\delta i} \right|_B \Delta i + 
+	\left. \frac{\delta F_M}{\delta x} \right|_B
+	 - \Delta x \]
+	\[\rightarrow \Delta F_M = F_M - F_MB = K_i \Delta i + K_x \Delta x mit \]
+	\[K_i = \left. \frac{\delta F_M}{\delta i} \right|_B = 2K_m \frac{i_B}{(d-x_B)^2} = ... = 4\frac{\sqrt{mgK_m}}{d} \]
+	\[K_x = \left. \frac{\delta F_M}{\delta x} \right|_B = 2K_m \frac{i_B^2}{(d-x_B)^3} = ... = 4\frac{mg}{d} \]
+
+\item Betrachtung der Kräftesumme:
+	\[ F_\Sigma = F_M -mg - F_z\]
+	\[ \xrightarrow{} F_{zB} + \Delta F_\Sigma = F_{MB} + \Delta F_M - mg - F_{zB} - \Delta F_z \]
+	\[ \xrightarrow{} \Delta F_\Sigma = \Delta F_M -  \Delta F_z \]
+	
+\item Strukturfeld des linearisierten Systems
+
+\TODO {Strukturfeld des linearisierten Systems }
+
+\end{itemize}
+
+\section{Modellvereinfachung der Strukturbildumformung}
+\begin{itemize}
+ \item Beispiel Magnetlager; siehe \bb{10}
+\begin{align}
+	\Delta X(s) &= \frac{\frac{1}{m}}{s^2} (R(s) + K_x \Delta X(s)) \rightarrow \Delta X(s) = 
+	\frac{\frac{\frac{1}{m}}{s^2}}{1-\frac{\frac{1}{m}}{s^2}K_x} R(s) - 1 \frac{1}{K_x} \\
+	&= \frac{-\frac{1}{K_x}}{1-(\frac{m}{K_x})s^2}R(s)
+\end{align}
+	\item \underline{2 Umformungsgrundoperationen:}\\
+	Vertauschen der Reihenfolge von ÜG und \underline{Zusammenfassen}
+	mehrere ÜG. Dabei geltende elementare Regeln: siehe \bb{11}
+	\item Alternative zur Umformung im Strukturfeld:
+	beschreibende Gleichungen aus Strukturbild ablesen, ineinander einsetzen und nach $y$ als Funktion
+	von $u$ und $z$ auflösen, dann Rückübersetzung in ein Strukturbild.
+	Beispiele dazu: siehe \bb{12}
+\item Meist Kombination beider Vorgehensweisen!
+\end{itemize}
+
+
+\section{Allgemeines Strukturbild linearer Eingangrößenstrecken}
+\begin{itemize}
+ \item entspricht dem gemeinsamen Aufbau beider Beispielsysteme, d.h
+	\TODO{Strukturbild}
+\end{itemize}
+
+
+
 
 
 
