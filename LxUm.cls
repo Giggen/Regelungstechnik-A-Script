@@ -71,7 +71,7 @@
 \usepackage{setspace}         % Zeilenabst?nde
 \usepackage{amsmath}          % mathematische Gleichungen
 \usepackage{xspace} 	      % Fuer typographisch richtiges z.B.
-\usepackage{txfonts}	      % Für Transformationssymbol
+\usepackage{trfsigns}	      % Für Transformationssymbol
 \usepackage[pdftex,
 	raiselinks=false,%
 	bookmarks=true,%
