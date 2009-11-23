@@ -70,6 +70,7 @@
 \usepackage[T1]{url}          % much like \verb allow line breaks for paths and URLs
 \usepackage{setspace}         % Zeilenabst?nde
 \usepackage{amsmath}          % mathematische Gleichungen
+\usepackage{amssymb}
 \usepackage{xspace} 	      % Fuer typographisch richtiges z.B.
 \usepackage{trfsigns}	      % Für Transformationssymbol
 \usepackage[pdftex,

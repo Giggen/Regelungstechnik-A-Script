@@ -2,9 +2,106 @@ am Beispiel des Stellverhaltens mit der ÜF $G(s) = G_1 G_2 $
 
 \section{Betrachtung der Strecken ÜF}
 \subsection{Polynomform der ÜF}
-\TODO{Formeln}
-
-Da im allgemeinen \TODO{Formeln}, ist $\delta$ ein Maß für die verzögernde Wirkung eines Systems (siehe BB 13)
+  \[ G(s) = \frac{b_ms^m + b_{m-1}s^{m-1} + ... + b_0}{a_ns^n + a_{n-1}s^{n-1} + ... + a_0} = \frac{Z(s)}{N(s)} \], wobei
+ \begin{itemize}
+  \item  $ a_i, b_j \in \mathbb{R} \text{ mit } a_n \not= 0 \wedge b_m \not= 0$ 
+  \item m = grad $Z(s)$: Zählergrad
+  \item n = grad $N(s)$: Nennergrad bzw. Systemordnung
+  \item $\delta = m-n$: Differenzgrad bzw. Relativgrad des Systems
+  \end{itemize}
+  \[  	\left.\begin{matrix}
+	    \delta > 0 \text{ verzögerndes} \\
+	    \delta = 0 \text{ nicht verzögerndes} \\
+	    \delta < 0 \text{ differenzierendes} \\
+	\end{matrix}\right\}
+	\text{Verhalten des Systems}
+  \]
+ 
+Da im allgemeinen $n \geq m$, d.h. $\delta \geq$  ist $\delta$ ein Maß für die verzögernde Wirkung eines Systems 
+(siehe \bb{13})
 
 \subsection{Pol- Nullstellenform der ÜF}
-Sind $n_1,...,n_m$ bzw. $p_i,...,p_n$ die (reellen oder konjugiert komplexen) Wurzeln von $Z(s)=0$ bzw. $N(s)=0$
+Sind $n_1,...,n_m$ bzw. $p_i,...,p_n$ die (reellen oder konjugiert komplexen) Wurzeln von $Z(s)=0$ bzw. $N(s)=0$ so folgt:
+ \[ G(s) = K \frac{\prod_{j=1}^m (s-n_j)}{\prod_{i=1}^n} \text{mit} K= \frac{b_m}{a_n} \]
+ Dabei gilt: \begin{itemize}
+              \item $ \left| G(s=n_j) \right| = 0, \text{ falls} n_j \not= p_1,...,p_n $ \\
+		    Dieses $n_j$ ist eine NS $s_0$ der ÜF
+	      \item $ \left| G(s=p_i) \right| = \infty, \text{ falls} p_i \not= n_1,...,n_m $ \\
+		    Dieses $p_i$ ist eine PS $s_\infty$ der ÜF
+             \end{itemize}
+Im weiteren gelte stets: $p_i \not= n_j \forall i,j$ ! \\
+\begin{itemize}
+ \item entspricht dem gemeinsamen Aufbau beider Beispielsysteme, d.h \\
+	\TODO{Strukturbild}
+  \item obige Form der ÜF ermöglict ihre graphische Darstellung in der komplexen s-Ebene als PN-Diagramm. 
+	\TODO{Bild}
+  \item Zusammenhänge zwischen Pol- und Nullstellenlage und Zeitverhalten des Systems: 
+  \subitem $ \operatorname{Re} \lbrace p_i \rbrace < 0 \forall_i \leftrightarrow \text{System mit} \delta \geq 0 
+	\text{BIBO-stabil} $ 
+  \item Weiterhin Betrachtung der Sprungantwort (bei Annahme endlicher Pole $p_i \not 0 $
+	\[ y_\sigma(s) = G(s) \frac{1}{s} \stackrel{PBZ}{=} \frac{r_0}{s} + \sum_{k=1}^N \frac{r_i}{s-p_i} \]
+	\[ \Laplace y_\sigma(t) = (r_0 + \sum_{k=1}^N r_i e^{p_it}) \sigma (t)	\]
+  \item Zu den Polstellen gehörende Zeitverläufe: siehe \bb{14}
+  \item $\rightarrow$ Beiträge stabiler Pole klingen ab, und zwar umso schneller, je weiter links sie liegen.
+  \subitem Weit links liegende Pole sind nicht dominant (d.h. nicht prägend für das Zeitverhalten und somit ggf. vernachlässigbar),
+	   wohl aber nahe der j-Achse liegende sowie instabile Pole (sofern nicht Nullstellen nahe dabei, was
+	  \[ r_\nu = \left. y_\sigma(s)(s-p_\nu) \right|_{s=p_\nu} \stackrel{\nu>0}{=} K\frac{\prod_{j} (p_\nu - n_j)}{p_r \prod_{j} (p_\nu - p_i)} \approx 0 \]
+	   zur Folge hat, falls $n_j \approx p_\nu$ gilt.
+  \item Weiterhin gilt: $r_0 = \sigma(s=0) = K \frac{\prod_j (-n_j)}{\prod_i (-p_i)}$ falls ein $n_j =0$, dann $r_0 = 0$, d.h $y(t) \rightarrow 0 \forall u(t) = N_0 \sigma(t)$ 
+  mit $U_0$ beliebig. 
+ \item Hat ein System eine NS bei $s=0$, so sind y-Stationäwerte $\not= 0$ nicht erzielbar!
+ \item Hat eine stabile Strecke K NS mit $\operatorname{Re} \lbrace n_j \rbrace > 0 $ (nichtminimalphasige Strecke), so
+      so schneidet $y_\sigma(t)$ für $t>0$ k-mal die Nulllinie. 
+ \item TODO{Strukturbild}
+ \item gezielte Beeinflussung schwieriger als im minimalphasigen Fall
+\end{itemize}
+
+\subsection{Zeitkonstantenform der ÜF}
+\underline{Folgt durch ausklammern der Pole und NS $\not= 0$}
+\begin{itemize}
+ \item reeller Pol $pi \not= 0$: $s-p_i = -p_i(1+ \frac{1}{-p_i}s)$ mit $T_i = \frac{1}{-p_i}( >0 \text{ für } p_i < 0)$:\\
+      Zeitkonstante zum reellen Pol $p_i$
+ \item kleines großes $T_i >0 \rightarrow $ kleine große Abklingzeit (siehe \bb{14} )
+ \item konjugiert komplexes Polpaar $p_i; p_n = p_k^*$:\\
+ \begin{align}
+      (s-p_i)(s-p_i^*) &= p_i p_i*(1+ \frac{1}{-p_i}s)(1+\frac{1}{-p_i^*}s) \\
+		       &= p_i p_i^*(1+ \frac{-(p_i + p_i^*)}{p_i p_i^*}s + \frac{1}{p_i p_i^*}s^2) \\
+		       &= \left| p_i \right|^2 (1 + \frac{-2\sigma_i}{\left| p_i \right|^2} s + \frac{1}{\left| p_i \right|^2}s^2) \\
+		       &= \frac{1}{T_i^2}(1 + 2D_iT_is + T_i^2s^2)
+\end{align}
+\[  	\text{mit } 
+	\left\{ \begin{matrix}
+	    T_i > 0 = \frac{1}{\left| p_i \right|^2} \text{ = Zeitkonstante} \\
+	    D_i = \frac{-\sigma_i}{\left| p_i \right|^2}, \left| D_i \right|^2 \text{ = Dämpfung}\\
+	\end{matrix}\right. 
+  \]
+\item kleines/ großes $\frac{T_i}{D_i} = \frac{1}{\sigma_i} > 0 \bb{14} \to $ kleine/ große Abklingzeit der Einhüllenden 
+\item großes/ kleines $D_i \to $ geringe/ hohe Schwingneigung (siehe \bb{7})
+\item entsprechend $T_{zj} = \frac{1}{-n_j} \text{ bzw. } T_{zj} = \frac{1}{\left| n_j \right|}, D_{zj} = \frac{-\operatorname{Re}\lbrace n_j \rbrace}{\left| n_j \right|}$ \\
+      bei reellen bzw. konjugiert komplexen Nullstellen
+\item Damit resultiert als ÜF nach dem Ausklammern der Pole und Nullstellen $\not= 0$: 
+\[G(s) = K \frac{(1-T_{zj}s)...(1+D_{z\mu}T_{z\mu}s + T_{z\mu}^2s^2)}
+	  {s^q (1+T_1s)(1+t_2s)...(1 + 2D_\nu T_{\nu s} s + T_\nu^2 s^2)}
+\]
+mit $K = k \frac{\prod_n (n_j)}{\prod_{p_i \not= 0} (-p_i)}$ : Verstärkungsfaktor der Strecke (meist Annahme: $K>0$)
+\item q: Anzahl der freien Integrierer/ Differenzierer (bei q<0) in der Strecke (Meist $q=0,1,2$ (Strecke mti P-/I-/ Doppel-I Verhalten))
+\item E/A Stabilität q=0 und $T_\nu D_\nu > 0  \forall \nu$
+
+\end{itemize}
+
+\section{Betrachtung des Strecken-Frequenzgang}
+\subsection{Definition:}
+Der Frequenzgang (FG) eines LZI-Glieds ist dessen ÜF G(s) über der $j\omega$ Achse, d.h. \\
+$G(s) \xrightarrow[s=j\omega]{} G(j\omega)$ \\
+Zeitkonstantenform der ÜF: $\xrightarrow[]{s=j\omega} G(j\omega) = K \frac{(1+T_{z1} j\omega)...}{(j\omega)^2 (1+T_1j\omega)...}$ \\
+Beispiel: $PT_1$-Glied:\\
+$G(s) = \frac{K}{1+Ts} \xrightarrow{s=j\omega} G{(j\omega)} = \frac{K}{1+Tj\omega} = \frac{K}{1+T^2\omega^2} + j \frac{-KT\omega}{1+T^2\omega^2} 
+      = \frac{K}{ \sqrt{\underbrace{1+T^2\omega^2}_{\left|G(j\omega)\right| }} } e^{j\underbrace{(-\arctan{(T\omega)})}_{\arg G(j\omega)}}$
+
+\subsection{Bedeutung des FG für das System-Zeitverhalten}
+
+
+
+
+
+
