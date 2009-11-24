@@ -99,6 +99,31 @@ $G(s) = \frac{K}{1+Ts} \xrightarrow{s=j\omega} G{(j\omega)} = \frac{K}{1+Tj\omeg
       = \frac{K}{ \sqrt{\underbrace{1+T^2\omega^2}_{\left|G(j\omega)\right| }} } e^{j\underbrace{(-\arctan{(T\omega)})}_{\arg G(j\omega)}}$
 
 \subsection{Bedeutung des FG für das System-Zeitverhalten}
+\[u(t) = \hat{U} \sin{(\omega t)} \]
+\[  y(t) = \left| G(j\omega) \right| \hat{U} \sin{(\omega_o t)} + \arg{G(j\omega_o)} + 
+         \underbrace{\sum_{i=1}^n r_i(\omega_o) e^{p_i t}}_{\to 0 \text{ für } t \to \infty} \]
+
+\begin{itemize}
+ \item E/A stabil $\leftrightarrow \operatorname{Re}\lbrace p_i \rbrace < 0 \forall_i$
+ \item  $\to$ im eingeschwungenen Zustand: $y(t) = \hat{y} \sin{(\omega_o + \varphi)} \text{ mit } \hat{y} = \left| G(j\omega_o) \right| \hat{u}, \varphi = \arg{G(j\omega)}$
+ \item  D.h.: Der FG charakterisiert die Übertragung harmonischer Signale durch E/A stabile LZI-Systeme. Dabei beschreibt $\left| G(j\omega_o) \right|$ den 
+	Amplitudengang und $\arg{G(j\omega)}$ den Phasengang. 
+ \end{itemize}
+
+\subsection{Graphische Darstellung des FG als Ortskurve in der komplexen $\Gamma$-Ebene}
+\TODO{Grafik}
+\begin{itemize}
+ \item \underline{Ortskurve (OK)} zum Frequenzgang 
+	$G(j\omega) \hat{=} $ Bild der $j\omega$-Achse der s-Ebene in der $\Gamma$-Ebene bei Anwendung der Abb. 
+	$\Gamma = G(j\omega); -\infty \leq \omega \leq \infty$ 
+ \item Beispiel: PT-1 Glied (FG siehe oben) OK-Verläufe häufiger Ü-Glieder siehe \bb{15}
+ \item Da OK symetrisch zur reellen Achse, meist nur Darstellung der positiven Hälfte für $\omega \geq 0$
+\end{itemize}
+
+%\item Frequenzkennlinen weiterer häufiger ÜG: siehe \bb{15 + 16}. 
+
+\subsection{Graphische Darstellung des FG als Frequenzkennlinen im Bode Diagramm}
+
 
 
 
